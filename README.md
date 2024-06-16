@@ -1,1 +1,1 @@
-# ts-codebase
+Esse repositório armazena alguns dos meus aprendizados tanto em JavaScript quanto TypeScript
