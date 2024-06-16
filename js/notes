@@ -1,2 +1,5 @@
 JS é uma linguagem interpretada (não é compilada).
 Executado no navegado(cliente) e servidor(Node.js). '
+
+Variavéis declaradas com let podem ser alteradas.
+Variavéis declaradas com const não podem ser alteradas.
