@@ -12,7 +12,9 @@ for(let i = 0; i < elementos.length; i++){
     // Desestruturando o array
     let {tag, texto} = elementos[i];
     let tagCriada = document.createElement(tag); // vai criar um elemento diferente a cada iteração
-    tagCriada.innerHTML = texto;
+    let textoCriado = document.createTextNode(texto);
+
+    tagCriada.appendChild(textoCriado);
     div.appendChild(tagCriada);
 }
 
