@@ -2,22 +2,22 @@
 const nomes = ['Alexandre', 'Ana', 'Gabriel']
 
 console.log('For Classico');
-for(let i = 0; i < nomes.length; i++){
+for (let i = 0; i < nomes.length; i++) {
     console.log(nomes[i]);
 }
 
 console.log('For In');
-for(let i in nomes){
+for (let i in nomes) {
     console.log(nomes[i]);
 }
 
 console.log('For Of');
-for(let valor of nomes){
+for (let valor of nomes) {
     console.log(valor);
 }
 
 // forEach 
-nomes.forEach(function(valor, indice){
+nomes.forEach(function (valor, indice) {
     console.log(valor, indice);
 });
 
