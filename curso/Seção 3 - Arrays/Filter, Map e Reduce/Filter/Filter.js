@@ -26,5 +26,7 @@ console.log(nomeMaiorQueCincoLetras);
 const maisVelhoQueCinquenta = pessoas.filter((obj) => obj.idade > 50);
 console.log(maisVelhoQueCinquenta);
 
-const nomeTerminadoComA = pessoas.filter((obj) => obj.nome.toLowerCase().endsWith("a"));
+const nomeTerminadoComA = pessoas.filter((obj) =>
+  obj.nome.toLowerCase().endsWith("a")
+);
 console.log(nomeTerminadoComA);
