@@ -1,0 +1,6 @@
+Nodemon reinicia automaticamente o servidor sempre que alterações nos arquivos forem detectadas.
+
+npm i nodemon --save-dev (Dependencia de desenvolvimento)
+No arquivo package.json vai ter um novo script 'start', só usar o npm start.
+
+ou npx nodemon nomeDoArquivo.js
