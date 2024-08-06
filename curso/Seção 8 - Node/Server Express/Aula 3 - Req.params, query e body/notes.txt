@@ -1,0 +1,10 @@
+Configura o Express para processar dados de formulários URL-encoded.
+`express.urlencoded({ extended: true })` permite que o Express entenda e
+manipule dados mais complexos que vêm em formulários, como listas de itens e
+outros detalhes. O parâmetro `extended: true` permite o uso de objetos aninhados
+e arrays nos dados do formulário.
+
+app.use(express.urlencoded({ extended: true }));
+
+http://example.com/profiles/algumacoisa -> url params, vem na rota da url
+Query strings: /profiles/12345?campanha=googleads&nome_campanha=sla começa na '?' pares de chave/valor  
