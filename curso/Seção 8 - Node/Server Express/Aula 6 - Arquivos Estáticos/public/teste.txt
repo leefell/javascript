@@ -1,0 +1,6 @@
+Arquivos estáticos
+Imagens (JPG, PNG, GIF, etc.)
+Arquivos de estilo (CSS)
+Arquivos de script (JavaScript)
+Fontes (WOFF, TTF, etc.)
+Outros arquivos que não precisam ser processados pelo servidor (HTML estático, documentos PDF, etc.)
