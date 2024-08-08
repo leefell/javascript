@@ -1,1 +1,2 @@
-Esse repositório armazena alguns dos meus aprendizados tanto em JavaScript quanto TypeScript
+# JS
+Nesse repositóriio guardo tudo que venho aprendendo ao estudar JavaScript.
