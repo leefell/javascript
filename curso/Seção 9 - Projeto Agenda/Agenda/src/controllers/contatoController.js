@@ -1,9 +1,5 @@
 const Contato = require("../models/ContatoModel");
 
-// function renderizaPaginaDeErro(res) {
-//   return res.render("404");
-// }
-
 exports.index = (req, res) => {
   res.render("contato", {
     contato: {},

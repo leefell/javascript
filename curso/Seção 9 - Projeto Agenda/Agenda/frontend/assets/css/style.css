@@ -75,3 +75,7 @@ body {
     font-size: 3rem;
     color: #d9534f;
 }
+
+.error-text {
+    color: #d9534f;
+}
