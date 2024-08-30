@@ -12,11 +12,12 @@ export default class Main extends Component {
   state = {
     novaTarefa: "",
     tarefas: [],
+    index: -1,
   };
 
   handleSubmit = (e) => {
     e.preventDefault();
-    const { tarefas } = this.state;
+    const { tarefas, index } = this.state;
     let { novaTarefa } = this.state;
     if (novaTarefa === "") return;
 
@@ -25,9 +26,19 @@ export default class Main extends Component {
 
     const novasTarefas = [...tarefas];
 
-    this.setState({
-      tarefas: [...novasTarefas, novaTarefa],
-    });
+    if (index === -1) {
+      this.setState({
+        tarefas: [...novasTarefas, novaTarefa],
+        novaTarefa: "",
+      });
+    } else {
+      novasTarefas[index] = novaTarefa;
+
+      this.setState({
+        tarefas: [...novasTarefas],
+        index: -1,
+      });
+    }
   };
 
   handleChange = (e) => {
@@ -37,7 +48,18 @@ export default class Main extends Component {
   };
 
   handleEdit = (e, index) => {
-    console.log("Edit", index);
+    const { tarefas } = this.state;
+
+    this.setState(
+      {
+        index,
+        novaTarefa: tarefas[index],
+      },
+      () => {
+        this.input.focus();
+        this.input.select();
+      }
+    );
   };
 
   handleDelete = (e, index) => {
@@ -58,7 +80,12 @@ export default class Main extends Component {
         <h1>Lista de Tarefas</h1>
 
         <form onSubmit={this.handleSubmit} action="#" className="form">
-          <input onChange={this.handleChange} type="text" value={novaTarefa} />
+          <input
+            onChange={this.handleChange}
+            type="text"
+            value={novaTarefa}
+            ref={(input) => (this.input = input)}
+          />
           <button type="submit">
             <FaPlus />
           </button>
