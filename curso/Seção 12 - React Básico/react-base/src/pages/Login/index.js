@@ -12,6 +12,7 @@ export default function Login() {
       </Title>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
       <Paragrafo>Esse é um parágrafo com underline</Paragrafo>
+      <button type="button">Enviar</button>
     </Container>
   );
 }
