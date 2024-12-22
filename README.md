@@ -1,2 +1,2 @@
 # JS
-Nesse repositóriio guardo tudo que venho aprendendo ao estudar JavaScript.
+Esse repositório guarda tudo que estudei sobre JavaScript e alguns projetos básicos.
