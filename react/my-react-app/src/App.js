@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function App() {
   // Use-states
@@ -7,6 +7,25 @@ function App() {
     "Pagar a conta de luz",
     "Estudar Riéct",
   ]);
+
+  useEffect(() => {
+    const tarefasStorage = localStorage.getItem("@tarefa");
+
+    if (tarefasStorage) {
+      setTarefas(JSON.parse(tarefasStorage));
+    }
+
+    // Esse return seria executado quando o componente é desemontado, por exemplo
+    // ir para uma rota diferente na url
+    // return () => {
+
+    // };
+  }, []);
+
+  // Toda vez que um componente é montado, essa função é executada
+  useEffect(() => {
+    localStorage.setItem("@tarefa", JSON.stringify(tarefas));
+  }, [tarefas]); // Entre colchetes vai quem é o alvo da mudança
 
   function handleRegister(e) {
     e.preventDefault();
