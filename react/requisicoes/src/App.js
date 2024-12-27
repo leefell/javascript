@@ -2,7 +2,7 @@ import RoutesApp from "./routes";
 import "./css/app.css";
 
 function App() {
-  return <RoutesApp />; // chama o componente de rotas
+  return <RoutesApp />;
 }
 
 export default App;
