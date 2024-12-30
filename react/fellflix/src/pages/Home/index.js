@@ -6,6 +6,7 @@ import "./home.css";
 function Home() {
   const apiKey = process.env.REACT_APP_API_KEY;
   const [movies, setMovies] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function getMovies() {
@@ -18,10 +19,19 @@ function Home() {
       });
 
       setMovies(response.data.results.slice(0, 10));
+      setLoading(false);
     }
 
     getMovies();
   }, []);
+
+  if (loading) {
+    return (
+      <div className="loading">
+        <h2>Carregando filmes...</h2>
+      </div>
+    );
+  }
 
   return (
     <div className="container">
