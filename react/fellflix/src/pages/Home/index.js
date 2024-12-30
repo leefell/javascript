@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import api from "../../services/api";
+import { Link } from "react-router-dom";
+import "./home.css";
 
 function Home() {
   const apiKey = process.env.REACT_APP_API_KEY;
@@ -14,15 +16,29 @@ function Home() {
           page: 1,
         },
       });
-      console.log(response.data.results);
+
+      setMovies(response.data.results.slice(0, 10));
     }
 
     getMovies();
   }, []);
 
   return (
-    <div>
-      <h1>Bem vindo A Home</h1>
+    <div className="container">
+      <div className="lista-filmes">
+        {movies.map((movie) => {
+          return (
+            <article key={movie.id}>
+              <strong>{movie.title}</strong>
+              <img
+                src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
+                alt={movie.title}
+              />
+              <Link to={`/filme/${movie.id}`}>Acessar</Link>
+            </article>
+          );
+        })}
+      </div>
     </div>
   );
 }
