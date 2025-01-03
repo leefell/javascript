@@ -23,9 +23,7 @@ function Home() {
     }
 
     getMovies();
-  }, []);
-  // Esse aviso ocorre porque a variável apiKey não foi tratada como dependência no useEffect.
-  // Como a apiKey não vai mudar, não há necessidade de incluí-la no array de dependências.
+  }, [apiKey]);
 
   if (loading) {
     return (
