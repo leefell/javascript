@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams, useNavigate, useNavigation } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import "./filme.css";
 
 import api from "../../services/api";
@@ -40,6 +40,28 @@ function Filme() {
     };
   }, [navigate, id, apiKey]);
 
+  function saveMovie() {
+    const myMovieList = localStorage.getItem("@fellflix");
+    let savedMovies;
+    try {
+      savedMovies = JSON.parse(myMovieList) || [];
+    } catch (e) {
+      savedMovies = [];
+    }
+    const hasMovie = savedMovies.some(
+      (savedMovie) => savedMovie.id === movie.id
+    );
+
+    if (hasMovie) {
+      alert("Esse filme já está na sua lista");
+      return;
+    }
+
+    savedMovies.push(movie);
+    localStorage.setItem("@fellflix", JSON.stringify(savedMovies));
+    alert("Filme salvo com sucesso.");
+  }
+
   if (loading) {
     return (
       <div className="loading">
@@ -60,7 +82,7 @@ function Filme() {
       <strong>Avaliação: {movie.vote_average} / 10</strong>
 
       <div className="area-buttons">
-        <button>Salvar</button>
+        <button onClick={saveMovie}>Salvar</button>
         <button>
           <a
             href={`https://youtube.com/results?search_query=${movie.title}+trailer`}
