@@ -16,3 +16,8 @@ body {
   align-items: center;
   flex-direction: column;
 }
+
+.Toastify__toast {
+  background-color: #060d17 !important;
+  color: #edcb46 !important;
+}

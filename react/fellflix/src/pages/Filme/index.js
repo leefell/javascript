@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import "./filme.css";
-
 import api from "../../services/api";
+import { toast } from "react-toastify";
 
 function Filme() {
   const apiKey = process.env.REACT_APP_API_KEY;
@@ -53,13 +53,13 @@ function Filme() {
     );
 
     if (hasMovie) {
-      alert("Esse filme já está na sua lista");
+      toast.info("Esse filme já está na sua lista");
       return;
     }
 
     savedMovies.push(movie);
     localStorage.setItem("@fellflix", JSON.stringify(savedMovies));
-    alert("Filme salvo com sucesso.");
+    toast.success("Filme salvo com sucesso.");
   }
 
   if (loading) {
