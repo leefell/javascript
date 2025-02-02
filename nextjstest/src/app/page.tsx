@@ -10,10 +10,25 @@ interface DataProps {
   };
 }
 
-async function getData() {
-  const response = await fetch("https://api.github.com/users/leefell/repos");
-
+async function delayFetch(url: string, delay: number) {
+  await new Promise((resolve) => setTimeout(resolve, delay));
+  const response = await fetch(url);
   return response.json();
+}
+
+// async function getData() {
+//   const response = await fetch("https://api.github.com/users/leefell/repos");
+
+//   return response.json();
+// }
+
+async function getData() {
+  const data = await delayFetch(
+    "https://api.github.com/users/leefell/repos",
+    1500
+  );
+
+  return data;
 }
 
 // Essa requisição é feita no lado do servidor
