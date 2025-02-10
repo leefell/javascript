@@ -1,3 +1,5 @@
+import styles from "@/app/page.module.css";
+
 interface DataProps {
   id: number;
   name: string;
@@ -16,16 +18,10 @@ async function delayFetch(url: string, delay: number) {
   return response.json();
 }
 
-// async function getData() {
-//   const response = await fetch("https://api.github.com/users/leefell/repos");
-
-//   return response.json();
-// }
-
 async function getData() {
   const data = await delayFetch(
     "https://api.github.com/users/leefell/repos",
-    3500
+    1000
   );
 
   return data;
@@ -38,18 +34,18 @@ export default async function Home() {
   console.log(data);
 
   return (
-    <main>
-      <h1>Home</h1>
-      <span>Seja bem-vindo a home</span>
+    <main className={styles.page}>
+      <h1 className={styles.title}>Home</h1>
+      <span className={styles.welcome}>Seja bem-vindo a home</span>
       <br />
 
-      <h3>Meus repositórios públicos</h3>
-      <ul>
+      <h3 className={styles.subtitle}>Meus repositórios públicos</h3>
+      <ul className={styles.repoList}>
         {data.map((repo) => {
           return (
-            <div key={repo.id}>
+            <div key={repo.id} className={styles.repoItem}>
               <strong>Repositório:</strong> <a>{repo.name}</a>, <br />{" "}
-              <span>Link: {repo.html_url} </span>
+              <span>Link: <a href={repo.html_url} target="_blank">{repo.html_url}</a></span>
               <br />
               <br />
             </div>

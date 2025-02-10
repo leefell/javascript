@@ -1,0 +1,12 @@
+.page {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.repoItem a {
+    text-decoration: none;
+    color: #FF7F7F ;
+}
+
+.repoItem a:visited {
+    color: lightblue;
+}
