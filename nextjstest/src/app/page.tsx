@@ -1,4 +1,5 @@
 import styles from "@/app/page.module.css";
+import { OwnerRepo } from "@/components/OwnerRepo";
 
 interface DataProps {
   id: number;
@@ -21,7 +22,7 @@ async function delayFetch(url: string, delay: number) {
 async function getData() {
   const data = await delayFetch(
     "https://api.github.com/users/leefell/repos",
-    1000
+    0
   );
 
   return data;
@@ -45,8 +46,17 @@ export default async function Home() {
           return (
             <div key={repo.id} className={styles.repoItem}>
               <strong>Repositório:</strong> <a>{repo.name}</a>, <br />{" "}
-              <span>Link: <a href={repo.html_url} target="_blank">{repo.html_url}</a></span>
+              <span>
+                Link:{" "}
+                <a href={repo.html_url} target="_blank">
+                  {repo.html_url}
+                </a>
+              </span>
               <br />
+              <OwnerRepo
+                avatar_url={repo.owner.avatar_url}
+                name={repo.owner.login}
+              />
               <br />
             </div>
           );
