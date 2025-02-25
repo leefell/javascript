@@ -1,0 +1,141 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Work Sans", no-ser;
+}
+
+body{
+    background: linear-gradient(90deg, #535456 0%, #163643 100%);
+    color: white;
+}
+
+.titulo{
+    text-align: center;
+    margin-top: 180px;
+    font-size: 2rem;
+    font-weight: 100;
+}
+
+.inputArea{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.inputArea input {
+    border: 1px solid black;
+    border-radius: 100px 20px 20px 100px;
+    width: 500px;
+    height: 40px;
+    background-color: #163643;
+    color: white;
+    padding-left: 10px;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.inputArea input:focus {
+    background-color: #1f4e5a;
+    border-color: #00ff88;
+    box-shadow: 0 0 10px #00ff88;
+    transform: scale(1.05);
+}
+
+.inputArea button {
+    border: 1px solid black;
+    border-radius: 20px 100px 100px 20px;
+    width: 100px;
+    height: 40px;
+    background: white;
+    color: black;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.inputArea button:hover {
+    background: #00ff88;
+    color: black;
+    transform: scale(1.1);
+    box-shadow: 0 0 10px #00ff88;
+}
+
+.inputArea button:active {
+    transform: scale(0.95);
+}
+
+.list {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.list ul {
+    list-style: none;
+    padding: 0;
+    width: 350px;
+}
+
+.list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 12px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    transition: background 0.3s, color 0.3s;
+}
+
+.list li:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.button-group {
+    display: flex;
+    gap: 10px;
+}
+
+.list button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: color 0.3s, transform 0.2s;
+    padding: 5px;
+}
+
+.list button:hover {
+    transform: scale(1.2);
+}
+
+.list .fa-trash {
+    color: #ff4c4c;
+}
+
+.list .fa-trash:hover {
+    color: #ff0000;
+}
+
+.list .fa-check {
+    color: #4cff4c;
+}
+
+.list .fa-check:hover {
+    color: #00ff00;
+}
+
+.completa {
+    text-decoration: line-through;
+    color: #b0b0b0;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.completa:hover {
+    background-color: rgba(22, 54, 67, 0.9);
+    color: #c0c0c0;
+}
